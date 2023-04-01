@@ -44,6 +44,13 @@ or
 ```shell script
 docker run --rm -it simaofsilva/noip-renewer:<TAG> <EMAIL> <PASSWORD>
 ```
+## docker-compose
+Edit the docker-compose.yml file. Replace `<INSERT_EMAIL>` and `<INSERT_PASSWORD>` with your email and password, keeping the quotation marks. Run `docker-compose up -d` to start it.
+```shell script
+environment:
+      EMAIL: "<INSERT_EMAIL>"
+      PASSWORD: "<INSERT_PASSWORD>"
+```
 
 ## Known issues / limitations
 * The script assumes that the No-IP account language is set to english. For other languages it depends on the translation provided by [googletrans](https://pypi.org/project/googletrans/) so it might not work in other languages ([#11](https://github.com/simao-silva/noip-renewer/issues/11));
