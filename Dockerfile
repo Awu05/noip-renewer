@@ -1,11 +1,9 @@
 FROM python:3.11.2-alpine@sha256:4b4078a3ab81edc2f5725cd42b065beaeeb4f9be3b4b1e3b4cf11dd6ae9720d3
 
-ARG PIP_VERSION
-
 COPY requirements.txt /requirements.txt
 
 RUN apk add --no-cache gcc libc-dev libffi-dev && \
-    pip install --no-cache-dir pip=="$PIP_VERSION" && \
+    pip install --no-cache-dir pip=="23.0.1" && \
     pip install --no-cache-dir --user -r /requirements.txt
 
 

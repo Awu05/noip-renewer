@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  noip:
+    image: noip-renewer:alpine
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: noip-renewer
+    restart: unless-stopped
+    environment:
+      EMAIL: "<INSERT_EMAIL>"
+      PASSWORD: "<INSERT_PASSWORD>"

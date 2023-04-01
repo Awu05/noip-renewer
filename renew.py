@@ -7,6 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 import requests
 import random
 from deep_translator import GoogleTranslator
+import os
 
 
 def method1():
@@ -42,7 +43,10 @@ if __name__ == "__main__":
     LOGOUT_URL = "https://my.noip.com/logout"
 
     # ASK CREDENTIALS
-    if len(argv) == 3:
+    if os.getenv('EMAIL') and os.getenv('PASSWORD'):
+        email = os.getenv('EMAIL')
+        password = os.getenv('PASSWORD')
+    elif len(argv) == 3:
         email = argv[1]
         password = argv[2]
     else:
